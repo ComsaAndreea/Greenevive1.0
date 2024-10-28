@@ -1,0 +1,85 @@
+<div class="Title">
+  <img src="https://cdn-icons-png.flaticon.com/128/3357/3357212.png" class="image">
+    <p class="Title-text" >Activities</p>
+</div>
+
+<div class="Subtitle">{{subtitle}}</div>
+
+<div class="center-content">
+
+  <div class="center">
+    <a href="tabs/tab3/activities">
+      <ion-button id="cancel" color="light" shape="round">
+          <ion-icon slot="start" name="close-circle-outline"></ion-icon>
+          Cancel
+      </ion-button>
+      </a>
+  </div>
+
+  <div class="center">
+    <ion-list>
+      <ion-item class="distanta">
+        <ion-select label="Choose habit type" label-placement="floating" fill="solid" #estate ngModel name="estate" estate.value="nimic" [(ngModel)]="type" (ionChange)="getSelectedType()">
+          <ion-select-option value="Car">Car</ion-select-option>
+          <ion-select-option value="Flight">Flight</ion-select-option>
+          <ion-select-option value="PublicTransport">Public Transport</ion-select-option>
+        </ion-select>
+      </ion-item>
+      </ion-list>
+  </div>
+
+  <div class="center">
+    <ion-list>
+      <ion-item class="distanta" *ngIf="estate.value === 'Car'">
+        <ion-select label="Choose car type" label-placement="floating" fill="solid" [(ngModel)]="carType" (ionChange)="getSelectedCar()">
+          <ion-select-option value="MediumDieselCar">MediumDieselCar</ion-select-option>
+          <ion-select-option value="LargeDieselCar">Large Diesel Car</ion-select-option>
+          <ion-select-option value="MediumPetrolCar">Medium Petrol Car</ion-select-option>
+          <ion-select-option value="LargePetrolCar">Large Petrol Car</ion-select-option>
+          <ion-select-option value="MediumHybridCar">MediumHybridCar</ion-select-option>
+          <ion-select-option value="LargeHybridCar">Large Hybrid Car</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="distanta" *ngIf="estate.value === 'Flight'">
+        <ion-select label="Choose plane type" label-placement="floating" fill="solid" [(ngModel)]="carType" (ionChange)="getSelectedCar()">
+          <ion-select-option value="DomesticFlight">Domestic Flight</ion-select-option>
+          <ion-select-option value="ShortEconomyClassFlight">Short Economy</ion-select-option>
+          <ion-select-option value="ShortBusinessClassFlight">Short Business</ion-select-option>
+          <ion-select-option value="LongEconomyClassFlight">Long Economy</ion-select-option>
+          <ion-select-option value="LongBusinessClassFlight">Long Business</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="distanta" *ngIf="estate.value === 'PublicTransport'">
+        <ion-select label="Choose public transport type" label-placement="floating" fill="solid" [(ngModel)]="carType" (ionChange)="getSelectedCar()">
+          <ion-select-option value="Taxi">Taxi</ion-select-option>
+          <ion-select-option value="ClassicBus">Classic Bus</ion-select-option>
+          <ion-select-option value="EcoBus">Eco Bus</ion-select-option>
+          <ion-select-option value="NationalTrain">National Train</ion-select-option>
+          <ion-select-option value="Subway">Subway</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      </ion-list>
+    
+  </div>
+
+  <div class="center">
+    <ion-list>
+      <ion-item class="distanta" *ngIf="estate.value === 'Flight' || estate.value === 'Car' || estate.value === 'PublicTransport'" fill="solid">
+      <ion-input value="distance" label="Distance (km)" type="number" placeholder="000" [(ngModel)]="distanceKm" (ionChange)="getDistance()"></ion-input>
+    </ion-item></ion-list>
+  </div>
+  <div class="center">
+    <ion-list>
+      <ion-item class="distanta" *ngIf="estate.value === 'Flight' || estate.value === 'Car' || estate.value === 'PublicTransport'" fill="solid">
+        <ion-input value="habit_name" label="Label" type="text" placeholder="Habit name" [(ngModel)]="habit_name" (ionChange)="getHabitName()"></ion-input>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="center">
+    <ion-button color="success" shape="round" (click)="createHabit()">
+      <ion-icon slot="start" name="{{icon_name}}"></ion-icon>
+      {{this.editingLabel}}
+    </ion-button>
+  </div>
+</div>

@@ -1,0 +1,200 @@
+$div-height: 200px;
+
+p.date {
+  text-align: right;
+  color:#cccccc;
+  font-size: 20px;
+}
+
+.Parent{
+  background-color: #a6bba5;
+  //background-image: url("../../assets/back1.jpg");
+  color: black;
+  //margin: 10px;
+  //padding-bottom: 50px;
+  //outline: 2px solid red;
+  width: auto;
+  height:fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //flex-direction: column;
+  overflow-y: auto; /* Activează scrollbar vertical */
+  scrollbar-color: #aaa transparent; 
+
+}
+$image-size: 45px;
+.image{
+  width: $image-size ;
+	height: $image-size ;
+  margin-top: 20px;
+}
+
+/* Stilurile pentru bara verticală */
+.Parent::-webkit-scrollbar {
+  width: 8px; /* Lățimea scrollbar-ului */
+  
+}
+
+/* Stilurile pentru mânerul scrollbar-ului */
+.Parent::-webkit-scrollbar-thumb {
+  background-color: #474646; 
+	border-radius: 5px; }
+
+/* Stilurile pentru mânerul scrollbar-ului când este hover */
+.Parent::-webkit-scrollbar-thumb:hover {
+  background-color: #777; }
+
+.Content {
+  margin: 6%;
+  //outline: 2px solid green;
+  width: 99%;
+  height: 100%; /* Set a fixed height to make it scrollable */
+  //overflow-y: scroll; /* Add this to enable vertical scrolling when content exceeds height */
+}
+
+
+.Title{
+  text-align: center;
+  display:flex;
+  justify-content: center;
+  background-color: #3c7357;
+
+}
+.Title-text{
+  //margin: 10px;
+  //outline: 2px solid red;
+  text-align: center;
+  color: #000000;
+  //font-family: "Shantell Sans";
+  font-weight: 500;
+  //font-size: 450%;
+  font-size: 50px;
+  background-color: transparent;
+  margin: 5px;
+  margin-top: 10px;
+  font-family: "Shantell Sans";
+
+
+}
+// .activityList{
+//   color: red;
+// }
+
+.Activity{
+  height: 87%;
+  margin: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+  //outline: 2px solid red;
+}
+
+.Citat{
+  //height: calc( ( 100% / 4 ) - 5.7% );
+  height: $div-height;
+  outline: 2px solid #3c7357;
+  display: flex;
+  justify-content: center;
+  background-color: #f5f6f7;
+  border-radius: 10px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: -15px;
+  margin: 10px;
+  //height: calc( ( 100% / 4 ) - 5.7% );
+
+}
+
+.break-line{
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 4px;
+  background-color: #3c7357;
+  //outline: 2px solid #eef0f2;
+  border-radius: 20px;
+}
+
+.My-activity,
+.My-suggestions{
+  width:max-content;
+  margin: 0px;
+  //outline: 2px solid red;
+  text-align: center;
+  //font-family: "Arial";
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.My-activity-div,
+.My-suggestions-div{
+  margin-left: 10px;
+  margin-right: 10px;
+  //outline: 2px solid red;
+  display: flex;
+  justify-content: center;
+}
+
+.My-activity-content{
+  margin: 10px;
+  outline: 2px solid #3c7357;
+  background-color: #f5f6f7;
+  //height: calc( ( 100% / 4 ) - 5.7% );
+  height: $div-height;
+  border-radius: 10px;
+}
+.My-activity-content2{
+  margin: 10px;
+  outline: 2px solid #3c7357;
+  background-color: #f5f6f7;
+  //height: calc( ( 100% / 4 ) - 5.7% );
+  height: auto;
+  border-radius: 10px;
+}
+
+.Placeholder{
+  //font-family: "Shantell Sans";
+  text-align: center;
+  font-size: 30px;
+  
+}
+
+.p1{
+  margin: 0px;
+}
+
+.show-more{
+  text-decoration: none;
+  color: #1f1f1f;
+
+}
+
+
+// ion-content {
+// 	width: calc(100% + 20px);
+// 	--padding-end: 40px !important;
+//   }
+  
+  // ion-content::part(scroll) {
+	// margin-right: -20px;
+  // } 
+
+  .nice-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 200%; // Adjust the font size as needed.
+    font-weight: bold;
+    color: #3c7357; // Adjust the color as needed.
+    padding: 10px 20px; // Optional: Add padding for some space around the number.
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Optional: Add a subtle box shadow for depth.
+  
+    // Optional: If you want the number to change color on hover.
+    transition: color 0.3s ease-in-out;
+
+  
+    &:hover {
+      color: #29a86d; // Adjust the hover color as needed.
+    }
+  }
+  

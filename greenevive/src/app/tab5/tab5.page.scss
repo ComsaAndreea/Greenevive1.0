@@ -1,0 +1,31 @@
+.fundal-img {
+	/* Stilurile pentru imaginea de fundal */
+	position: absolute; /* Setează poziția absolută pentru a acoperi întreg div-ul .Parent */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* Asigură că imaginea acoperă întregul div */
+	z-index: -1; /* Afișează imaginea de fundal sub celelalte elemente */
+	opacity: 0.8; /* Transparență de 50% */
+}
+
+ion-content {
+	/* Elimină marginile implicite pentru ion-content */
+	margin: 0;
+	padding: 0;
+}
+  
+  /* Stiluri pentru mesajul de pe pagină */
+.custom-message {
+    text-align: center; /* Aliniere text la centru */
+    font-size: 32px; /* Dimensiune font mare */
+    font-weight: bold; /* Stil font bold */
+    font-family: "Shantell Sans"; /* Fontul utilizat în restul aplicației */
+    color: #000000; /* Culoare text */
+    position: absolute; /* Setează poziția absolută pentru a centra mesajul */
+    top: 50%; /* Plasează mesajul la 50% pe verticală */
+    left: 50%; /* Plasează mesajul la 50% pe orizontală */
+    transform: translate(-50%, -50%); /* Centrarea exactă a mesajului */
+}
+  

@@ -1,0 +1,67 @@
+<ion-content>
+  
+    <div class="tot">
+    <div class="Title">
+      <img src="https://cdn-icons-png.flaticon.com/128/3357/3357212.png" class="image">
+      <button class="Title-button" routerLink="..">Greenevive</button>
+    </div>
+  </div>
+    
+    <div class="Parent">
+    <div class="Text-1">
+      <div class="Text-1-div">
+        <h1 class="Text-1-h1">Sign In</h1>
+        <h3 class="Text-1-h3">Hi there! Nice to see you again.</h3>
+      </div>
+    </div>
+    <form>
+      <div>
+        <div class="Email-div">
+          <div class="Email">
+            <p class="Email-p">Email</p>
+            <input class="Email-field" type="text" name="email"   placeholder="Enter your email" [(ngModel)] = 'email'>
+          </div>
+        </div>
+
+        
+        <div class="Password-div">
+          <div class="Password">
+            <p class="Password-p">Password</p>
+            <input class="Password-field" [type]="passwordVisible ? 'text' : 'password'" name="password" placeholder="Enter your password" [(ngModel)]="password">
+            <ion-icon slot="end" [name]="passwordVisible ? 'eye-off' : 'eye'" (click)="togglePasswordVisibility()"></ion-icon>
+          </div>
+        </div>
+        
+      
+
+  <div class="Buttons-container">
+    <div class="Sign-in-div">
+      <button class="Sign-in-button" type="submit" (click)="login()">Sign In</button>
+    </div>
+
+    <p class="or">or</p>
+
+    <div class="Sign-in-div">
+      <button class="Google-button" type="submit" (click)="SignInWithGoogle()">
+        <ion-icon class="Google-icon" name="logo-google"></ion-icon>
+        Sign In with Google
+      </button>
+    </div>
+  </div>
+
+
+      </div>
+    </form>
+    <div class="Other-options">
+      
+      <div class="Other-options-div">
+        <div class="Forgot-Password">
+          <a href="../forgot-password/"><button class="Forgot-Password-button">Forgot Password</button></a>
+      
+          <a href="../sign-up"><button class="Sign-up-button">Sign Up</button></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ion-content>

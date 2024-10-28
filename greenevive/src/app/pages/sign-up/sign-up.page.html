@@ -1,0 +1,61 @@
+<ion-content>
+
+<div class="tot">
+  <div class="Title">
+    <img src="https://cdn-icons-png.flaticon.com/128/3357/3357212.png" class="image">
+    <button class="Title-button" routerLink="..">Greenevive</button>
+  </div>
+</div>
+
+<div class="Parent">
+  <div class="Text-1">
+    <div class="Text-1-div">
+      <h1 class="Text-1-h1">Sign Up</h1>
+      <h3 class="Text-1-h3">Hi there! Nice to meet you.</h3>
+    </div>
+  </div>
+  <form>
+    <div class="Username-div">
+      <div class="Username">
+        <p class="Username-p">Username</p>
+        <input class="Username-field" type="text" name="username" placeholder="Enter username.." [(ngModel)]="username">
+      </div>
+    </div>
+
+    <div class="Email-div">
+      <div class="Email">
+        <p class="Email-p">Email</p>
+        <input class="Email-field" name="email" type="text" placeholder="Enter your email" [(ngModel)]="email">
+      </div>
+    </div>
+
+    <div class="Password-div">
+      <div class="Password">
+        <p class="Password-p">Password</p>
+        <input class="Password-field" [type]="passwordVisible ? 'text' : 'password'" name="password" placeholder="Enter your password" [(ngModel)]="password">
+        <ion-icon slot="end" [name]="passwordVisible ? 'eye-off' : 'eye'" (click)="togglePasswordVisibility()"></ion-icon>
+      </div>
+    </div>
+
+    <div class="PasswordVer-div">
+      <div class="PasswordVer">
+        <p class="PasswordVer-p">Verify Password</p>
+        <input class="PasswordVer-field" [type]="verPasswordVisible ? 'text' : 'password'" placeholder="Confirm your password" name="passwordVer" [(ngModel)]="ver_password">
+        <ion-icon slot="end" [name]="verPasswordVisible ? 'eye-off' : 'eye'" (click)="toggleVerPasswordVisibility()"></ion-icon>
+      </div>
+    </div>
+
+    <div class="Buttons-container">
+      <div class="Sign-up-div">
+        <button class="Sign-up-button" (click)="register()">Sign Up</button>
+      </div>
+    </div>
+
+  </form>
+  <div class="Other-options">
+    <div>
+      Already have an account? <em><a href="../sign-in"><button class="Sign-in-button">Sign In</button></a></em>
+    </div>
+  </div>
+  </div>
+</ion-content>

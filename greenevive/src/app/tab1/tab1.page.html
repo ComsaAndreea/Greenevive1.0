@@ -1,0 +1,73 @@
+
+  <div class="Title">
+    <img src="https://cdn-icons-png.flaticon.com/128/3357/3357212.png" class="image">
+      <p class="Title-text" >Home</p>
+    </div>
+<div class="Parent">
+
+  <div class="Content scroll-container">
+    
+    
+
+    <div class="Activity">
+      
+      <div class="My-suggestions-div">
+        <p class="My-suggestions">My suggestions</p>
+        
+      </div>
+
+      <div class="break-line"></div>
+
+      <a href="./quotes" class="show-more">
+        <div class="Citat">
+          <h2><br>"
+          <i>{{ randomQuote?.text }}</i>
+          "<br><br>
+          {{ randomQuote?.author }}
+          </h2>
+        </div>
+      </a>
+
+      <div class="My-activity-div">
+        <p class="My-activity">My Score this week</p>
+        
+      </div>
+
+      <div class="break-line"></div>
+
+      <div class="My-activity-content2">
+          <p class="nice-number" >{{totalScore | number: '1.2-2'}} kilograms</p>
+        
+      </div>
+
+      <div class="My-activity-div">
+        <p class="My-activity">My activity this week</p>
+      </div>
+
+      <div class="break-line"></div>
+      <div class="My-activity-content">
+
+      <ion-list >
+        <div *ngFor="let a of activitiesFromDB;">
+        <div class="activityList" *ngIf="a.userID == UID">
+          <ion-item button (click)="openActivityDetails($event, a)"> 
+          <ion-label>{{a.date.toDate() | date:'dd/MM HH:mm'}}</ion-label>
+          <ion-label>{{a.label}}</ion-label>
+          <ion-label>{{a.pollution.carbonEquivalent | number: '1.2-2'}} kg CO2</ion-label>
+          </ion-item>
+        
+
+      </div>
+    </div>
+      </ion-list>
+      
+    </div>
+
+
+    </div>
+
+
+  </div>
+
+</div>
+

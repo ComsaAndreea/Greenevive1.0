@@ -1,0 +1,225 @@
+<div class="Title">
+  <img src="https://cdn-icons-png.flaticon.com/128/3357/3357212.png" class="image">
+    <p class="Title-text" >Activities</p>
+</div>
+
+
+
+
+  <ion-segment color="success" value="success" [(ngModel)]="segment" (ionChange)="schimbaPagina($event)">
+    <ion-segment-button value="activities">
+      <ion-label class="button1">Activities</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="habits">
+      <ion-label class="button1">Habits</ion-label>
+    </ion-segment-button>
+  </ion-segment><br>
+  <div class="search">
+    <ion-searchbar mode="md" animated="true" color="light" class="searchbar-custom" (ionInput)="getfilteredActivities($event)" placeholder="Search by name/type"></ion-searchbar>
+  </div>
+  <ion-content>
+      <div class="Parent">
+
+  
+  <div>
+
+    <ng-container *ngIf="segment === 'activities'">
+      <!-- <div class="button-segment">
+        <button class="Add-button" (click)="goToPage('activities')">Add Activity</button>
+      </div> -->
+      <div (click)="goToPage('activities')" class="right">
+        <ion-icon name="add-circle-outline" ></ion-icon>
+        <ion-label>New</ion-label>
+      </div>
+      
+      <div class="centered-container">
+
+        <ion-list class="activity-list">
+          <ng-container *ngFor="let activity of filteredActivities">
+            <ng-container *ngIf="activity.userID === UID">
+              <ion-item class="activity-item">
+                <ion-grid class="activity-box">
+                  <ion-row>
+                    <ion-col size="12" class="activity-date">
+                      {{ activity.date.toDate() | date: 'dd/MM/yyyy HH:mm' }}
+                      <ion-icon name="trash-outline" class="delete-icon" (click)="canDismiss_activity(activity.actID)"></ion-icon>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="8" class="activity-name">
+                      <h2>{{ activity.label }}</h2>
+                    </ion-col>
+                    <ion-col size="4" class="activity-pollution">
+                      <ion-chip color="danger">
+                        <ion-label>{{ activity.pollution.carbonEquivalent | number: '1.2-2' }} kg CO2</ion-label>
+                      </ion-chip>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="12" class="activity-transport">
+                      <ion-icon name="car-outline"></ion-icon>
+                      {{ activity.type }}
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="12" class="activity-vehicle" text-wrap>
+                      <ion-icon name="car-sport-outline"></ion-icon>
+                      {{ activity.car_type }}
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="12" class="activity-distance">
+                      <ion-icon name="speedometer-outline"></ion-icon>
+                      {{ activity.distance }} km
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-item>
+            </ng-container>
+          </ng-container>
+        </ion-list>
+        
+        
+        
+        
+        <!-- <ion-list class="activity-list">
+          <ng-container *ngFor="let activity of filteredActivities">
+            <ng-container *ngIf="activity.userID === UID">
+              <ion-item class="activity-item">
+                <ion-grid class="activity-box">
+                  <ion-row>
+                    <ion-col size="12" class="activity-date">
+                      {{ activity.date.toDate() | date: 'dd/MM/yyyy HH:mm' }}
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="7" class="activity-name">
+                      <h2>{{ activity.label }}</h2>
+                    </ion-col>
+                    <ion-col size="5" class="activity-pollution">
+                      <ion-chip color="danger">
+                        <ion-label>{{ activity.pollution.carbonEquivalent }} CO2</ion-label>
+                      </ion-chip>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="6" class="activity-transport">
+                      <ion-icon name="car-outline"></ion-icon>
+                      {{ activity.type }}
+                    </ion-col>
+                    <ion-col size="6" class="activity-distance">
+                      <ion-icon name="speedometer-outline"></ion-icon>
+                      {{ activity.distance }} km
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="12" class="activity-vehicle" text-wrap>
+                      <ion-icon name="car-sport-outline"></ion-icon>
+                      {{ activity.car_type }}
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-item>
+            </ng-container>
+          </ng-container>
+        </ion-list> -->
+        
+      </div>
+    </ng-container>
+      
+    <ng-container *ngIf="segment === 'habits'">
+      <div (click)="goToPage('habits')" class="right">
+        <ion-icon name="add-circle-outline" ></ion-icon>
+        <ion-label>New</ion-label>
+      </div>
+            
+      <div class="centered-container">
+        <ion-list class="activity-list">
+          <ng-container *ngFor="let habit of filteredHabits">
+            <ng-container *ngIf="habit.userID === UID">
+              <ion-item class="activity-item">
+                <ion-grid class="activity-box">
+                  <ion-row>
+                    <ion-col size="8" class="activity-name">
+                      <h2>{{ habit.label }}</h2>
+                    </ion-col>
+                    
+                    <ion-col size="4" class="activity-pollution">
+                      <ion-chip color="danger">
+                        <ion-label>{{ habit.pollution.carbonEquivalent  | number: '1.2-2'}} kg CO2</ion-label>
+                      </ion-chip>
+                    </ion-col>
+                    
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="10" class="activity-transport">
+                      <ion-icon name="car-outline"></ion-icon>
+                      {{ habit.type }}
+                    </ion-col>
+                    <ion-col size="2" class="activity-date">
+                      <ion-icon name="add-outline" class="add-icon" (click)="addActivity(habit)"></ion-icon>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="10" class="activity-vehicle" text-wrap>
+                      <ion-icon name="car-sport-outline"></ion-icon>
+                      {{ habit.car_type }}
+                    </ion-col>
+                    <ion-col size="2" class="activity-date">
+                      <ion-icon name="pencil" class="edit-icon" (click)="edit_habit(habit)"></ion-icon>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="10" class="activity-distance">
+                      <ion-icon name="speedometer-outline"></ion-icon>
+                      {{ habit.distance }} km
+                    </ion-col>
+                    <ion-col size="2" class="activity-date">
+                      <ion-icon name="trash-outline" class="delete-icon" (click)="canDismiss(habit.habitID)"></ion-icon>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-item>
+            </ng-container>
+          </ng-container>
+        </ion-list>
+
+
+        <!-- <ion-list lines="none">
+          <div *ngFor="let a of filteredHabits">
+            <div *ngIf="a.userID === UID" class="activity-box">
+              <ion-item class="activity-item">
+                <ion-icon name="pencil" (click)="edit_habit(a)"></ion-icon>
+
+                <div class="content-container">
+                  <div class="left-column">
+                    <div class="activity-info">
+                      <div class="car-type">{{ a.label }}</div>
+                      <div class="activity-type">Type: {{ a.type }}</div>
+                      <div class="car-type">Car Type: {{ a.car_type }}</div>
+                      <div class="distance">Distance: {{ a.distance }} km</div>
+                    </div>
+                    <div *ngFor="let carbon of a.pollution | keyvalue">
+                      <div class="pollution-item">Pollution: {{ carbon.value }} micrograms</div>
+                    </div>
+                  </div>
+                  <div class="right-column">
+                    <ion-icon name="add-outline" (click)="addActivity(a)"></ion-icon>
+                    <div (click)="canDismiss(a.habitID)">
+                      <ion-icon name="trash" ></ion-icon>
+                    </div>
+                  </div>
+                </div>
+              </ion-item>
+            </div>
+          </div>
+        </ion-list> -->
+        
+        
+      </div>
+    </ng-container>
+
+ </div>
+</div>
+</ion-content>
+

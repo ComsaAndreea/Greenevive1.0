@@ -1,0 +1,66 @@
+
+    <div class="Title">
+      <img src="https://cdn-icons-png.flaticon.com/128/3357/3357212.png" class="image">
+        <p class="Title-text" >User profile</p>
+      </div>
+      <div class="Parent">
+  <div class="profile-icon">
+    <!-- Verificăm dacă există URL pentru imaginea de profil -->
+    <img [src]="userProfileImageUrl" alt="Profile Image" class="profile-image" *ngIf="userProfileImageUrl; else defaultProfileIcon">
+    <!-- Dacă nu există URL pentru imaginea de profil, afișăm pictograma de rezervă -->
+    <ng-template #defaultProfileIcon>
+      <ion-icon name="person-circle" class="default-profile-icon"></ion-icon>
+    </ng-template>
+    <div class="Buttons-container">
+      <!-- Labelul stilizat ca buton pentru a alege fișierul (Choose File) -->
+      <label for="fileInput" class="Sign-in-button">
+        Change Photo
+      </label>
+      <!-- Inputul de tip "file" ascuns -->
+      <input id="fileInput" type="file" accept="image/*" (change)="onFileSelected($event)"> 
+      <!-- Butonul pentru a încărca imaginea -->
+      <button class="Sign-in-button" type="submit" (click)="uploadImage()">Update</button>
+    </div>
+  </div>
+  
+
+  <div>
+    <div class="Username-div">
+      <div class="Username">
+        <p class="Username-p">Username</p>
+        <input *ngIf="userData" class="Username-field" type="text" placeholder="Enter your username" [(ngModel)]="userData.username">
+      </div>
+    </div> 
+
+    <div class="Email-div">
+      <div class="Email">
+        <p class="Email-p">Email</p>
+        <input *ngIf="userData" class="Email-field" name="email" type="text" placeholder="Enter your email" [(ngModel)]="userData.email" disabled>
+      </div>
+    </div>
+
+    <div class="Nume-div">
+      <div class="Nume">
+        <p class="Nume-p">Last Name</p>
+        <input *ngIf="userData" class="Nume-field" type="text" placeholder="Enter your name" [(ngModel)]="userData.nume">
+      </div>
+    </div>
+
+    <div class="Prenume-div">
+      <div class="Prenume">
+        <p class="Prenume-p">First Name</p>
+        <input *ngIf="userData" class="Prenume-field" type="text" placeholder="Enter your surname" [(ngModel)]="userData.prenume">
+      </div>
+    </div>
+
+    <div class="Telefon-div">
+      <div class="Telefon">
+        <p class="Telefon-p">Phone Number</p>
+        <input *ngIf="userData"  class="Telefon-field" type="text" placeholder="Enter mobile phone" [(ngModel)]="userData.telefon" (input)="onInput($event)">
+      </div>
+    </div>
+
+  
+    
+  </div>
+</div>

@@ -1,0 +1,185 @@
+/* Stil pentru conținutul întregii pagini */
+ion-content {
+	background-color: #f8f8f8;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .Title{
+	text-align: center;
+	display:flex;
+	justify-content: center;
+	background-color: #3c7357;
+  
+  }
+  .Title-text{
+	//margin: 10px;
+	//outline: 2px solid red;
+	text-align: center;
+	color: #000000;
+	//font-family: "Shantell Sans";
+	font-weight: 500;
+	//font-size: 450%;
+	font-size: 50px;
+	background-color: transparent;
+	margin: 5px;
+	margin-top: 10px;
+	font-family: "Shantell Sans";
+  }
+
+  	$image-size: 45px;
+	.image{
+	width: $image-size ;
+		height: $image-size ;
+	margin-top: 20px;
+	}
+  
+  /* Stil pentru iconița profilului */
+  .profile-icon {
+	margin-top:5%;
+	font-size: 64px;
+	color: #92d36e;
+	display:flex;
+	justify-content: center;
+  }
+  
+  /* Stil pentru butonul de submit */
+  .Sign-in-button {
+	color: #ffffff;
+	font-size: 17px;
+	width: 100%;
+	height: 48px;
+	background-color: #3c7357;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+  }
+  
+  .Sign-in-button:hover {
+	background-color: #152c22; /* Schimbă culoarea de fundal la hover */
+  }
+
+  .Nume-div, .Prenume-div, .Telefon-div, .Email-div, .Username-div {
+	display: flex;
+	justify-content: center;
+	
+  }
+  
+  .Nume, .Prenume, .Telefon, .Email, .Username {
+	text-align: left;
+  }
+  
+   .Nume-field, .Prenume-field, .Telefon-field, .Username-field,.Email-field {
+	width: 350px;
+	background-color: white;
+	outline: none;
+	padding: 5px; /* Add padding for better appearance */
+	margin-top: -10px;
+  }
+
+  .Email-field{
+  color: #999; /* Text color for disabled input */
+  cursor: not-allowed; /* Change cursor to not-allowed */
+  }
+  
+  .Nume-p, .Telefon-p, .Prenume-p, .Username-p, .Email-p{
+	color: black;
+	font-weight: bold;
+  }
+
+  /* Stil pentru pictograma de rezervă */
+  .default-profile-icon {
+	font-size: 64px;
+	color: #92d36e;
+  }
+  
+  /* Stil pentru imaginea de profil */
+  .profile-image {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border: 2px solid #ccc;
+	display: block;
+	margin: 10px;
+  }
+  
+
+  .Parent {
+	background-color: #a6bba5;
+	color: black;
+	width: auto;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+  }
+  
+
+  .Sign-in-div,
+  .Other-options {
+	margin: 10px;
+	text-align: center;
+  }
+  
+  .Forgot-Password-button,
+  .Sign-up-button {
+	background-color: transparent;
+	color: #92d36e;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: color 0.3s ease; /* Add transition for hover effect */
+  }
+  
+  .Forgot-Password-button:hover,
+  .Sign-up-button:hover {
+	color: #436946; /* Change text color on hover */
+  }
+
+  /* Stilizare pentru butonul de încărcare a fișierelor */
+input[type="file"] {
+	/* Ascundem aspectul implicit al butonului */
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	outline: none;
+	border: none;
+	background-color: transparent;
+	color: #ffffff; /* Culoarea textului */
+	font-size: 16px; /* Mărimea textului */
+	padding: 5px 20px; /* Spațiere între conținut și margini */
+	border-radius: 5px; /* Borda rotunjită */
+	background-color: #007bff; /* Culoarea de fundal a butonului */
+	cursor: pointer; /* Cursorul devine de tip pointer la hover */
+  }
+  
+  /* Stilizare pentru butonul de încărcare a fișierelor la hover */
+  input[type="file"]:hover {
+	background-color: #0056b3; /* Schimbăm culoarea de fundal la hover */
+  }
+  
+  /* Stilizare pentru butonul de încărcare a fișierelor la focus */
+  input[type="file"]:focus {
+	outline: none; /* Eliminăm conturul la focus */
+	box-shadow: 0 0 5px #007bff; /* Adăugăm o umbră subtilă la focus */
+  }
+  
+  /* Stiluri pentru elementul input de tip "file" */
+  #fileInput {
+	display: none; /* Ascundem elementul input de tip "file" */
+  }
+
+  .Buttons-container {
+	display: flex;
+	justify-content: center; /* Așezăm conținutul pe axa orizontală în centru */
+	align-items: center; /* Așezăm conținutul pe axa verticală în centru */
+//	flex-direction: row; /* Așezăm conținutul pe aceeași linie orizontală */
+	height: 20vh; /* Înălțimea containerului să fie pe întreaga înălțime a viewport-ului */
+  }
+  

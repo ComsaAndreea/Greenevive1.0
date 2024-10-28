@@ -1,0 +1,84 @@
+
+<div class="Parent">
+  <div class="title-div">
+  <ion-button shape="circle" color="success" href="tabs/tab1">
+    <ion-icon slot="icon-only" name="arrow-back-circle-outline"></ion-icon>
+  </ion-button>
+  <p class="Title">Did you know?</p>
+</div>
+  <ion-segment color="success" value="success" [(ngModel)]="segment" (ionChange)="schimbaPagina($event)">
+    <ion-segment-button value="facts">
+      <ion-label>Facts & Advice</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="favorite">
+      <ion-label>Favorites</ion-label>
+    </ion-segment-button>
+  </ion-segment><br>
+
+  <ion-content>
+    
+    <div>
+      <div class="scroll-container">
+      <ng-container *ngIf="segment === 'facts'">
+        <div class="card-container">
+        <ng-container *ngFor="let q of quotes; let i = index">
+        <ion-card color="light" class="custom-card">
+          <ion-card-header>
+            <ion-card-title>{{q.text}} </ion-card-title>
+            <ion-card-subtitle>{{q.author}}</ion-card-subtitle><br>
+            <!-- <div class="favorite-icon" [ngClass]="{'favorite-added': isFavorite[i]}" (click)="toggleFavorite(i)">
+              <ion-icon name="heart" class="favorite-heart"></ion-icon>
+            </div> -->
+            <ion-icon name="heart" class="favorite-heart" *ngIf="isFavorite[i]" (click)="toggleFavorite(i)"></ion-icon>
+            <ion-icon name="heart-outline" class="favorite-heart" *ngIf="!isFavorite[i]" (click)="toggleFavorite(i)"></ion-icon>
+    
+          </ion-card-header>
+        </ion-card>
+      </ng-container></div></ng-container>  
+
+
+      <ng-container *ngIf="segment === 'favorite'">
+        <ion-item (click)="toggleDropdown1()" class="dropdown">
+          <ion-label>
+            AI generated suggestions
+          </ion-label>
+          <ion-icon slot="end" name="chevron-down-outline" *ngIf="!isDropdownOpen1"></ion-icon>
+          <ion-icon slot="end" name="chevron-up-outline" *ngIf="isDropdownOpen1"></ion-icon>
+        </ion-item>
+
+        <ion-button class="generateAI" (click)="getFunFacts()">AI Suggestion</ion-button>
+
+        <ion-list class="test" *ngIf="isDropdownOpen1">
+          <ion-item *ngFor="let aiquote of aiquotes">
+            <div class="friend-request">{{ aiquote }}
+            <div (click)="canDismiss_aiquote(aiquote)">
+              <ion-icon name="close-outline" class="right"></ion-icon><br>
+            </div> 
+          </div>
+          </ion-item>
+        </ion-list>
+        <div class="card-container">
+          
+          <ng-container *ngFor="let quote of favoriteQuotes; let i = index">
+            <ion-card color="light" class="custom-card-fav">
+              <ion-card-header>
+                <div (click)="removeFavorite(quote, i)">
+                  <ion-icon name="close-outline" class="right2"></ion-icon><br>
+                </div>
+                <ion-card-title>{{ quote.text }}</ion-card-title>
+                <ion-card-subtitle>{{ quote.author }}</ion-card-subtitle>
+              </ion-card-header>
+            </ion-card>
+          </ng-container>
+        </div>
+      </ng-container>
+    
+   </div>
+  </div>
+   </ion-content>
+   </div>
+
+
+
+
+  

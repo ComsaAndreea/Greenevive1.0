@@ -1,0 +1,321 @@
+ion-segment {
+    background:  white;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .Parent{
+    background-color: #a6bba5;
+    //background-image: url("../../assets/back1.jpg");
+    color: black;
+    //margin: 10px;
+    //padding-bottom: 50px;
+    //outline: 2px solid red;
+  
+    height:fit-content;
+    min-height: 100%;
+    //display: flex;
+    justify-content: center;
+    align-items: center;
+    //flex-direction: column;
+    overflow-y: auto; /* Activează scrollbar vertical */
+    scrollbar-color: #aaa transparent; 
+    
+    }
+    .button1{
+      //outline: 2px solid red;
+      color: #000000;
+      font-weight: bold;
+    }
+    .search{
+      background-color: #a6bba5;
+    }
+
+    .searchbar-custom {
+      color: #000000;
+      width: 90%; 
+      margin: 0 auto;
+      font-size: 14px; 
+      align-items: start;
+      }
+      ion-list{
+        background-color: #a6bba5;
+      }
+ 
+  .Title{
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    background-color: #3c7357;
+    }
+    .right{
+      font-size: 22px;
+      color: white;
+      background-color: #3c7357;
+      cursor: pointer;
+      padding:1%;
+      text-align: center;
+      width: 90%;
+      align-items: start;
+      margin: 0 auto;
+      margin-top: 2%;
+      margin-bottom: 2%;
+      border-radius: 15px;
+    }
+    .right:hover{
+      background-color:#24db1a;
+    }
+
+    // .right::after {
+    //   content: "Add a new activity";
+    //   visibility: hidden;
+    //   opacity: 0;
+    //   transition: opacity 0.3s ease;
+    //   color:#000000;
+    //   font-size: 18px;
+    //   width: fit-content;
+    // }
+    // .right:hover::after {
+    //   visibility: visible;
+    //   opacity: 1;
+    // }
+  
+    .Title-text{
+    //margin: 10px;
+    //outline: 2px solid red;
+    text-align: center;
+    color: #000000;
+    //font-family: "Shantell Sans";
+    font-weight: 500;
+    //font-size: 450%;
+    font-size: 50px;
+    background-color: transparent;
+    margin: 5px;
+    margin-top: 10px;
+    font-family: "Shantell Sans";
+    }
+  
+  $image-size: 45px;
+  .image{
+    width: $image-size ;
+    height: $image-size ;
+    margin-top: 20px;
+  }
+
+ion-icon{
+	width: 25px;
+	height: 25px;
+}
+.button-segment{
+	padding-left: 40%;
+	padding-right: 40%;
+}
+.Add-button{
+	color: rgb(5, 40, 13);
+    //margin: 10px;
+    text-align: center;
+    border-radius:10px;
+    font-size: 17px;
+    width: 280px;
+    height: 48px;
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.005);
+    background-color: #92d36e;
+  }
+
+  
+
+
+/* Example SCSS for the centered list-like structure with card content as a single row */
+.centered-container {
+  display: flex;
+  justify-content: center;
+}
+
+.activity-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc; /* Add a border for a card-like look */
+  border-radius: 8px; /* Optional: Add rounded corners for the activity items */
+  padding: 10px; /* Optional: Add padding for spacing inside each activity item */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow for depth */
+  width: 100%; /* Adjust the width of the activity items as needed */
+
+  .activity-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .date {
+    font-size: 18px; /* Adjust the font size for the date */
+    font-weight: bold;
+    margin-bottom: 10px; /* Add margin to separate the date from the content */
+  }
+
+  .single-row {
+    display: flex;
+    justify-content: space-between; /* Display Type, Car Type, and Distance on the same row */
+    width: 100%; /* Ensure the single-row takes up the full width */
+    margin-bottom: 10px; /* Add margin between the single-row and the pollution */
+  }
+
+
+  ion-button {
+    margin-top: 10px; /* Optional: Add margin to separate the delete button from the content */
+  }
+
+  /* Optional: Add hover effect for the activity items */
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    cursor: pointer;
+  }
+}
+
+/* Styles for the date-separator class */
+.date-separator {
+  font-weight: bold; /* Make the date text bold */
+  color: #FF5733;  /* Set the desired text color for the date */
+  margin-bottom: 5px; /* Add spacing below the date */
+}
+
+/* Styles for the activity-info class */
+.activity-info {
+  font-weight: bold; /* Make the activity info text bold */
+}
+
+/* Styles for the activity-type class */
+.activity-type {
+  color: #3366FF; /* Set the desired text color for activity type */
+}
+
+/* Styles for the car-type class */
+.car-type {
+  color: #FF9933; /* Set the desired text color for car type */
+}
+
+/* Styles for the distance class */
+.distance {
+  color: #33CC33; /* Set the desired text color for distance */
+}
+.repeat {
+  color: #cc3347; /* Set the desired text color for distance */
+}
+ion-item{
+  width: 100%;
+}
+/* Styles for the pollution-item class */
+.pollution-item {
+  color: #FF3300; /* Set the desired text color for pollution items */
+}
+/* Styles for the content-container class */
+.content-container {
+  display: flex; /* Use Flexbox layout */
+  justify-content: space-between; /* Space between columns */
+  align-items: center; /* Vertically center items */
+}
+
+/* Styles for the left-column class */
+.left-column {
+  flex: 1; /* Grow to fill available space */
+}
+
+.activity-box {
+  background-color: #a6bba5; /* Set the background color of the box */
+  border: 1px solid #3c7357; /* Add a border around the box */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  // margin-bottom: 10px; /* Add spacing between boxes (adjust as needed) */
+  padding: 10px; /* Add padding inside the box */
+  width:100%;
+}
+
+/* Styles for the right-column class (aligns the button to the right) */
+.right-column {
+  text-align: right; /* Align contents to the right */
+  display: block;
+}
+
+.activity-list {
+  padding: 0;
+  margin: 0;
+}
+
+.activity-item {
+  margin-bottom: 10px;
+ // margin: -5px;
+  width:100%;
+  background-color: #a6bba5;
+}
+
+.activity-box {
+  width: 350px;
+  margin: 0 auto; /* Center the grid */
+  background-color: #f0f0f0; /* Optional: Add a background color for better visibility */
+  padding: 10px; /* Optional: Add some padding */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.activity-date,
+.activity-name,
+.activity-pollution,
+.activity-transport,
+.activity-vehicle,
+.activity-distance {
+  padding: 5px 0;
+}
+
+.activity-name h2 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.activity-transport,
+.activity-vehicle,
+.activity-distance {
+  display: flex;
+  align-items: center;
+}
+
+.activity-vehicle {
+  white-space: normal;
+}
+
+.delete-icon {
+  float: right;
+  cursor: pointer;
+  color: red;
+  font-size: 1.2em;
+  margin-left: 10px;
+}
+.delete-icon:hover{
+  border: solid 2px #3c7357;
+}
+.add-icon {
+  float: right;
+  cursor: pointer;
+  color: rgb(71, 179, 125);
+  font-size: 1.2em;
+  margin-left: 10px;
+}
+.add-icon:hover{
+  border: solid 2px #3c7357;
+}
+.edit-icon {
+  float: right;
+  cursor: pointer;
+  color: rgb(212, 141, 19);
+  font-size: 1.2em;
+  margin-left: 10px;
+}
+.edit-icon:hover{
+  border: solid 2px #3c7357;
+}

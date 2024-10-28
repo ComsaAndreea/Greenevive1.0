@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "greenevive"
+  },
+  "targets": {
+    "greenevive": {
+      "hosting": {
+        "app": [
+          "greenevive"
+        ]
+      }
+    }
+  }
+}

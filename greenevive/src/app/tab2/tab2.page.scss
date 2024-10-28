@@ -1,0 +1,280 @@
+
+.Title{
+	text-align: center;
+	display:flex;
+	justify-content: center;
+	background-color: #3c7357;
+  }
+
+  .Title-text{
+	//margin: 10px;
+	//outline: 2px solid red;
+	text-align: center;
+	color: #000000;
+	//font-family: "Shantell Sans";
+	font-weight: 500;
+	//font-size: 450%;
+	font-size: 50px;
+	background-color: transparent;
+	margin: 5px;
+	margin-top: 10px;
+	font-family: "Shantell Sans";
+  }
+
+$image-size: 45px;
+.image{
+  width: $image-size ;
+	height: $image-size ;
+  margin-top: 20px;
+}
+.profile-image{
+	width:10%;
+	height:10%;
+}
+.Parent{
+	background-color: #a6bba5;
+	//background-image: url("../../assets/back1.jpg");
+	color: black;
+	//margin: 10px;
+	//padding-bottom: 50px;
+	//outline: 2px solid red;
+	width: auto;
+	height:fit-content;
+	min-height: 87%;
+	//display: flex;
+	justify-content: center;
+	align-items: center;
+	//flex-direction: column;
+	overflow-y: auto; /* Activează scrollbar vertical */
+	scrollbar-color: #aaa transparent; 
+  
+  }
+.search{
+	background-color: #a6bba5;
+}
+ion-segment {
+  background: white;
+}
+  
+.padding{
+	padding-bottom: 5%;
+}
+
+ion-label {
+  background:  white;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.searchbar-custom {
+	color: #000000;
+  width: 90%; 
+  margin: 0 auto;
+  font-size: 14px; 
+  align-items: start;
+  }
+ 
+
+.div1{
+	background-color: #ffffff;
+	overflow: hidden;
+}
+
+.cancel-request-button {
+	font-size: 20px;
+	background-color: #e1c6b6; /* Set a background color */
+	color: white; /* Set text color */
+	border: none; /* Remove borders */
+	padding: 8px 16px; /* Add padding */
+	cursor: pointer; /* Show pointer cursor on hover */
+	border-radius: 4px; /* Add rounded corners */
+  }
+  .accept-request-button{
+	font-size: 20px;
+	background-color: #3c7357; /* Set a background color */
+	color: rgb(255, 255, 255); /* Set text color */
+	border: solid 1.5px black; /* Remove borders */
+	padding: 8px 16px; /* Add padding */
+	cursor: pointer; /* Show pointer cursor on hover */
+	border-radius: 4px; /* Add rounded corners */
+  }
+  .accept-request-button:hover{
+	background-color: #92d36e;
+  }
+  .add-friend-button:hover {
+	background-color: #2e78e6; /* Change background color on hover */
+  }
+  
+  
+ /* Style for the first friend request item */
+.friend-request {
+	font-size: 20px;
+	width: 100%; /* 3/4 of the screen width */
+	max-height: 100px; /* Adjust the height as needed */
+	margin: auto;
+	margin-bottom: 2%; /* Center the item horizontally */
+	padding: 16px; /* Add padding */
+	background-color: #a6bba5;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+	border-radius: 8px; /* Rounded corners */
+	display: flex; /* Use flex layout for alignment */
+	align-items: center; /* Center vertically */
+	justify-content: space-between; /* Align content at the edges */
+	color: black;
+	font-size: 20px;
+	font-weight:500;  
+}
+  /* Style for the cancel button */
+  .friend-request .cancel-request-button {
+	font-size: 20px;
+	background-color: #73423c; /* Set a background color */
+	color: rgb(255, 255, 255); /* Set text color */
+	border: solid 1.5px black; /* Remove borders */
+	padding: 8px 16px; /* Add padding */
+	cursor: pointer; /* Show pointer cursor on hover */
+	border-radius: 4px; /* Add rounded corners */
+  
+  }
+  
+  /* Change button background color on hover */
+  .friend-request .cancel-request-button:hover {
+	background-color: #E64A2E;
+  }
+
+  .dropdown{
+	align-items: center;
+	width: 90%;
+	justify-content: center;
+	color: black;
+	font-weight:500;
+  }
+
+  
+
+.button1{
+	//outline: 2px solid red;
+	color: #000000;
+	font-weight: bold;
+}
+
+.test{
+	background-color: #ffffff;
+	padding-bottom: 10%;
+}
+
+.user{
+	background-color: #92d36e;
+}
+
+.username{
+	color: black;
+	font-size: 20px;
+	font-weight:500;
+}
+
+.email{
+	color:black;
+	font-size: 15px	;
+}
+.email2{
+	color:black;
+	font-size: 15px;
+	font-weight:500;
+	background-color: #a6bba5;
+	max-width: 40%;
+}
+.score{
+	font-weight: 500;
+	background-color: #a6bba5;
+	color:black;
+}
+
+.user-div{
+	background-color: #92d36e;
+	//border: 2px solid red;
+	border-radius: 10px;
+	padding-left: 20px;
+	display: flex;
+	justify-content: space-between;
+	//width: 40%; 
+	//max-width: 700px;
+}
+
+.add-friend-div{
+	border: 0px solid transparent;
+	border-radius: 10px;
+	margin-right: 3px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	//outline: 2px solid red;
+	display: flex;
+	align-items: center;
+	padding: 2px;
+}
+ion-icon{
+	color: black;
+}
+
+.right{
+	font-size: 30px;
+	position: absolute;
+    top: 20%;
+    right: 18px;
+    transform: translateY(-50%);
+	color: white;
+	background-color: #73423c;
+}
+.right2{
+	font-size: 30px;
+	position: absolute;
+    top: 20%;
+    right: 20%;
+    transform: translateY(-50%);
+	color: white;
+	background-color: #3c7357;
+}
+.right:hover{
+	background-color: #E64A2E;
+}
+.right2:hover{
+	background-color: greenyellow;
+}
+.username2{
+	font-size: 20px;
+	color: black;
+}
+
+ion-content {
+	width: calc(100% + 20px);
+	--padding-end: 40px !important;
+  }
+  
+  ion-content::part(scroll) {
+	margin-right: -20px;
+  } 
+  
+  .scroll-container::-webkit-scrollbar {
+	width: 20px; 
+	
+  }
+
+  .scroll-container::-webkit-scrollbar-thumb {
+	background-color: #101010; 
+	border-radius: 5px; 
+  }
+
+  .scroll-container::-webkit-scrollbar-thumb:hover {
+	background-color: #777; 
+  }
+
+  .scroll-container {
+	max-height: 900px; 
+	//overflow-y: auto; 
+	-webkit-overflow-scrolling: touch; 
+	scrollbar-color: #aaa transparent; 
+  }
+
+
+  

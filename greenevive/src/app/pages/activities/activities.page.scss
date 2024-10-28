@@ -1,0 +1,114 @@
+.Title{
+  text-align: center;
+  display:flex;
+  justify-content: center;
+  background-color: #3c7357;
+}
+
+.Title-text{
+  text-align: center;
+  color: #000000;
+  font-weight: 500;
+  font-size: 50px;
+  background-color: transparent;
+  margin: 5px;
+  margin-top: 10px;
+  font-family: "Shantell Sans";
+}
+
+$image-size: 45px;
+.image{
+  width: $image-size ;
+  height: $image-size ;
+  margin-top: 20px;
+}
+
+.Sign-in-div{
+  display: block;
+}
+
+.Subtitle{
+  font-size: 40px;
+  background-color: #a6bba5;
+  font-weight: 500;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  font-family: "Shantell Sans";
+  padding-top: 3%;
+  padding-bottom: 3%;
+  border-bottom: solid 3px #000000;
+  border-top: solid 3px #000000;
+}
+
+.center-content {
+	
+	justify-content: center;
+	align-items: center;
+  overflow-y: auto;
+  height: fit-content+10%;
+  min-height: 80%;
+  background-color: #a6bba5;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #a6bba5;
+  padding: 0 auto;
+  padding-top: 1%;
+  height: 12%;
+}
+
+ion-list{
+  width: 85%;
+  background-color: #a6bba5;
+}
+
+ion-button{
+  margin: 5%;
+}
+
+.distanta{
+  background-color: #a6bba5;
+  width: 95%;
+}
+
+.center-ultim {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #a6bba5;
+  padding-top: 5%;
+  height: fit-content;
+}
+
+.Add-button{
+  display: block;
+  justify-content: center;
+	color: rgb(5, 40, 13);
+  text-align: center;
+  border-radius:10px;
+  font-size: 17px;
+  width: 60%;
+  height: 40%;
+  padding: 5%;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.005);
+}
+ion-icon{
+	width: 25px;
+	height: 25px;
+}
+
+.Cancel-button{
+	background-color: #4c5552a3;
+  align-content: center;
+  padding-bottom: 5px;
+}
+
+

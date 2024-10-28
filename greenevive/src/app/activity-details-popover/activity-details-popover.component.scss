@@ -1,0 +1,29 @@
+
+  
+  .list {
+    --background: var(--ion-color-light);
+    border-radius: 10px;
+    padding: 16px;
+    margin: auto; /* Center the popover horizontally */
+    max-width: 100%; /* Limit the width of the popover */
+    background-color: #a6bba5b9;
+    padding-left: 15%;
+    border: 5px solid #3c7357 ;
+    border-radius: 1px;
+  }
+  
+  .item {
+    --background: transparent;
+    --border-color: transparent;
+    --padding-start: 0px;
+    --padding-end: 0px;
+    --min-height: 40px;
+    margin-bottom: 10px;
+
+  }
+  
+  .label {
+    font-size: 16px;
+    color: black;
+  }
+  

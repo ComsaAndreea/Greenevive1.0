@@ -1,0 +1,30 @@
+<!-- tabs.page.html -->
+<ion-tabs class="test">
+  <!-- Taburile existente -->
+  <!-- ... -->
+
+  <ion-tab-bar slot="bottom" class="transparent-tab-bar">
+    <ion-tab-button tab="tab1" class="w-10">
+      <ion-icon aria-hidden="true" name="home-outline" class="b-black"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" class="w-10">
+      <ion-icon aria-hidden="true" name="people-outline" class="b-black"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab3" class="w-10">
+      <ion-icon aria-hidden="true" name="calendar-outline" class="b-black"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab4" class="w-10">
+      <ion-icon aria-hidden="true" name="person-outline" class="b-black"></ion-icon>
+    </ion-tab-button>
+    
+    <ion-tab-button tab="tab5" class="w-10">
+      <!-- Utilizăm ion-button pentru a crea butonul de logout și adăugăm directiva (click) pentru a apela metoda logout() -->
+      <ion-button (click)="logoutWithConfirmation()" fill="clear" class="b-red b-black">
+        <ion-icon aria-hidden="true" name="exit"></ion-icon>
+      </ion-button>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

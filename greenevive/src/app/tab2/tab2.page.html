@@ -1,0 +1,130 @@
+
+
+  <div class="Title">
+  <img src="https://cdn-icons-png.flaticon.com/128/3357/3357212.png" class="image">
+    <p class="Title-text" >Friends</p>
+</div>
+
+
+<ion-segment  id="Friends" color="dark" value="success" [(ngModel)]="segment" (ionChange)="schimbaPagina($event)">
+  <ion-segment-button value="button1">
+    <ion-label class="button1">Add friends</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="button2">
+    <ion-label class="button1">Requests</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="button3">
+    <ion-label class="button1">My friends</ion-label>
+  </ion-segment-button>
+</ion-segment>
+<div class="search">
+<ion-searchbar mode="md" animated="true" color="light" placeholder="Search" class="searchbar-custom" [(ngModel)]="searchQuery" (ionInput)="searchUsers()"></ion-searchbar>
+</div>
+<div class="Parent">
+    <!-- <div class="scroll-container"> -->
+      <ion-content>
+    <div class="padding">
+      <ng-container *ngIf="segment === 'button1'">
+        <div class="test">
+          <ion-list class="test" *ngIf="filteredUsers.length>0">
+            <ion-item *ngFor="let user of filteredUsers">
+              <!-- <ion-label class="user-div"> -->
+                <div class="friend-request">
+                  <h2 class="username"> 
+                    <p>{{ user.username }} </p>
+                    <p class="email" >{{ user.email }}</p>
+                   </h2>
+                   <div>
+                    <!-- If no friend request has been sent, show the Add Friend button -->
+                    <ng-container>
+                      <button class="accept-request-button" (click)="friendRequest(user.email)">Add Friend</button>
+                    </ng-container>
+                  </div>
+              </div>
+              <!-- </ion-label> -->
+            </ion-item>
+          </ion-list>
+        </div>
+      </ng-container>
+
+      
+ 
+      <ng-container *ngIf="segment === 'button2'">
+        <div class="test">
+          <ion-item (click)="toggleDropdown1()" class="dropdown">
+            <ion-label>
+              Friend Requests for me
+            </ion-label>
+            <ion-icon slot="end" name="chevron-down-outline" *ngIf="!isDropdownOpen1"></ion-icon>
+            <ion-icon slot="end" name="chevron-up-outline" *ngIf="isDropdownOpen1"></ion-icon>
+          </ion-item>
+
+          <ion-list class="test" *ngIf="filteredRequestsForMe.length>0 && isDropdownOpen1">
+            <ion-item *ngFor="let req of filteredRequestsForMe">
+              <div class="friend-request">{{ req }}
+              <!-- <button class="accept-request-button" (click)="acceptFriendRequest(req)">Accept Request</button> -->
+              <div (click)="acceptFriendRequest(req)">
+                <ion-icon name="checkmark-outline" class="right2"></ion-icon><br>
+              </div>
+              <!-- <button class="cancel-request-button" (click)="deleteFriendRequest(req)">Delete Request</button>   -->
+              <div (click)="deleteFriendRequest(req)">
+                <ion-icon name="close-outline" class="right"></ion-icon><br>
+              </div> 
+            </div>
+            </ion-item>
+          </ion-list>
+          
+          <ion-item (click)="toggleDropdown2()" class="dropdown">
+            <ion-label>
+              Friend Requests from me
+            </ion-label>
+            <ion-icon slot="end" name="chevron-down-outline" *ngIf="!isDropdownOpen2"></ion-icon>
+            <ion-icon slot="end" name="chevron-up-outline" *ngIf="isDropdownOpen2"></ion-icon>
+          </ion-item>
+          <ion-list class="test" *ngIf="filteredRequestsFromMe.length>0 && isDropdownOpen2">
+            <ion-item *ngFor="let req of filteredRequestsFromMe">
+              <div class="friend-request">Friend request sent to {{ req }}
+              <!-- <button class="cancel-request-button" (click)="cancelFriendRequest(req)">Cancel Request</button> -->
+              <div (click)="cancelFriendRequest(req)">
+                <ion-icon name="close-outline" class="right"></ion-icon><br>
+              </div>  
+            </div>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="segment === 'button3'">
+        <div>
+          <ion-list class="test" *ngIf="filteredFriends.length>0">
+            <ion-item *ngFor="let friend of filteredFriends">
+                <div class="friend-request">
+                  
+                  <ion-avatar>
+                    <img [src]="friend.profileImageURL" alt="Profile Image" class="prfile-image" *ngIf="friend.profileImageURL && friend.profileImageURL!=''; else defaultProfileIcon">
+                      <ng-template #defaultProfileIcon>
+                        <ion-icon name="person-circle" class="default-profile-icon"></ion-icon>
+                      </ng-template>
+                  </ion-avatar>
+                  <!-- <ion-label class="username"> {{ friend.username }} </ion-label> -->
+                  <ion-label text-wrap class="email2">
+                    <p class="username2">{{ friend.username }}</p>
+                    <p>{{ friend.email }}</p> 
+                  </ion-label>
+                  <ion-label class="score">{{ totalScore[friend.email] | number: '1.2-2'}} kg</ion-label>
+                  <!-- <button (click)="calculate(friend.email)">Calculate for me!</button> -->
+                  <!-- <div class="add-friend-div">
+                  <button class="add-friend-button" (click)="RemoveFriend(friend.email)">Remove Friend</button>
+                  </div> -->
+                  <div (click)="canDismiss(friend.email)">
+                    <ion-icon name="close-outline" class="right"></ion-icon><br>
+                  </div>
+              
+              </div>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ng-container>
+    </div>
+  <!-- </div> -->
+</ion-content>
+</div>

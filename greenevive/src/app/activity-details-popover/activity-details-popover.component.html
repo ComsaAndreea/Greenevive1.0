@@ -1,0 +1,20 @@
+<ul class="list">
+  <li class="item">
+    <label class="label">Label: {{activity.label}}</label>
+  </li>
+  <li class="item">
+    <label class="label">Date: {{activity.date.toDate() | date:'dd/MM/yyyy HH:mm'}}</label>
+  </li>
+  <li class="item">
+    <label class="label">Type: {{activity.type}}</label>
+  </li>
+  <li class="item">
+    <label class="label">Car Type: {{activity.car_type}}</label>
+  </li>
+  <li class="item">
+    <label class="label">Distance: {{activity.distance}} km</label>
+  </li>
+  <li class="item">
+    <label class="label">Pollution: {{activity.pollution.carbonEquivalent}} kg</label>
+  </li>
+</ul>
