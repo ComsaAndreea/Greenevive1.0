@@ -13,7 +13,7 @@ export class GptAPIService {
 
 
 
-  private apiUrl = 'https://api.openai.com/v1/chat/completions';
+  private apiUrl = '';
   private apiKey = 'xxx';
 
   constructor(private http: HttpClient, private firestore: Firestore) { }
