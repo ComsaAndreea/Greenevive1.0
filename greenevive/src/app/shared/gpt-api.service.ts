@@ -12,10 +12,6 @@ import OpenAI from "openai";
 export class GptAPIService {
 
 
-
-  private apiUrl = '';
-  private apiKey ='';
-
   constructor(private http: HttpClient, private firestore: Firestore) { }
 
 
