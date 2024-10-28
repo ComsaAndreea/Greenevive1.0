@@ -14,7 +14,7 @@ export class GptAPIService {
 
 
   private apiUrl = 'https://api.openai.com/v1/chat/completions';
-  private apiKey = 'sk-proj-WkXlDSstyklFa0HlJ2gVT3BlbkFJXv4fiuGp35w1LJbRWsaA';
+  private apiKey = 'xxx';
 
   constructor(private http: HttpClient, private firestore: Firestore) { }
 
