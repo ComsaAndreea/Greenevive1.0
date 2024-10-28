@@ -14,7 +14,7 @@ export class GptAPIService {
 
 
   private apiUrl = '';
-  private apiKey = 'xxx';
+  private apiKey ='';
 
   constructor(private http: HttpClient, private firestore: Firestore) { }
 
